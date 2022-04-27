@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 // LEARNING this is like us creating our own html tag :)
+// decorator
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
