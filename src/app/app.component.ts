@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 // LEARNING this is like us creating our own html tag :)
 // decorator
 @Component({
+  // LEARNING selector can be also an attribute or a class
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
