@@ -5,15 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
-import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     // LEARNING registering a new component 
     ServerComponent,
-    ServersComponent,
-    ButtonComponent
+    ServersComponent
   ],
   imports: [
     BrowserModule,
