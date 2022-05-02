@@ -1,3 +1,28 @@
-<button class="btn btn-primary" [disabled]="allowNewServer">Add Server</button>
+<!--LEARNING event binding
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<p>{{ serveName }}</p> -->
+
+<label for="server-name">Server Name</label>
+<!--LEARNING two way binding-->
+<input
+  id="server-name"
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName"
+/>
+<p *ngIf="serverCreated" else noServer>
+  Server was created. Name is: {{ serverName }}
+</p>
+<ng-template #noServer>
+  <p>No server was created.</p>
+</ng-template>
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server
+</button>
+<p [innerText]="allowNewServer"></p>
 <app-server></app-server>
 <app-server></app-server>
