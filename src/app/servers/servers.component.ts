@@ -5,32 +5,31 @@ import { Component, OnInit } from '@angular/core';
   // LEARNING template or templateUrl are always needed and template code can be inline
   // template: '<app-server></app-server>',
   templateUrl: './servers.component.html',
-  styleUrls: ['./servers.component.css']
+  styleUrls: ['./servers.component.css'],
 })
 export class ServersComponent implements OnInit {
-
   allowNewServer = false;
   serverCreationStatus = 'No server created';
   serverName = 'Test';
   serverCreated = false;
+  servers = ['Test Server 1', 'Test Server 2'];
 
-  constructor() { 
+  constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
     }, 2000);
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onCreateServer() {
     this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'Server created. Name is: ' + this.serverName;
   }
 
   onUpdateServerName(event: Event) {
     console.log(event);
-    this.serverName = (<HTMLInputElement> event.target).value;
+    this.serverName = (<HTMLInputElement>event.target).value;
   }
-
 }
