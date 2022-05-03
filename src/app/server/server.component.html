@@ -1,2 +1,8 @@
 <!-- LEARNING Data binding: this example is a string interpolation, any typescript expression which can be resolved to a string can be used -->
-<p>{{ 'Server' }} with ID {{ serverId }} and {{ getServerName() }} is offline.</p>
+<p
+  [ngStyle]="{ backgroundColor: getColor() }"
+  [ngClass]="{ online: serverStatus === 'online' }"
+>
+  {{ "Server" }} with ID {{ serverId }} and {{ getServerName() }} is
+  {{ getServerStatus() }}.
+</p>
